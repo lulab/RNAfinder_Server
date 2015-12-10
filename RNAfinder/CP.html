@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)http://v3.bootcss.com/examples/justified-nav/# -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>COME</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./bootstrap/css/justified-nav.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="./bootstrap/js/ie-emulation-modes-warning.js"></script><style type="text/css"></style>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <script>window["_GOOG_TRANS_EXT_VER"] = "1";</script><script>window["_GOOG_TRANS_EXT_VER"] = "1";</script><script>window["_GOOG_TRANS_EXT_VER"] = "1";</script><script>window["_GOOG_TRANS_EXT_VER"] = "1";</script><script>window["_GOOG_TRANS_EXT_VER"] = "1";</script><script>window["_GOOG_TRANS_EXT_VER"] = "1";</script></head>
+
+  <body>
+
+    <div class="container">
+
+      <div class="masthead">
+        <p>
+          <font size="20" face="arial" color="SteelBlue"><b>RNA</b></font>
+          <font size="20" face="arial" color="grey"><b>finder</b></font>
+        </p>
+        <ul class="nav nav-justified">
+          <li ><a href="./index.html">Home</a></li>
+          <li class="active"><a href="./CP.html">COME</a></li>
+          <li><a href="./NP.html">RNAfeature</a></li>
+          <li><a href="./Dataset.html">Data Sets</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </div>
+<div id = "change">
+ <div>
+        <h2>COME web site</h2>
+	<p style = "font-size: 20px;">
+	<b><font color="Green">COME</font></b> is a tool to calculate <b><font color="Green">CO</font></b>ding potential from <b><font color="Green">M</font></b>ultiple f<b><font color="Green">E</font></b>atures for a given transcript. 
+	</p>
+ </div>
+
+<br>
+ <div>
+        <h3>Software Download</h3>
+	<div class="well">
+	<p style = "font-size: 20px;">
+	<strong><font color=Green>COME</font><font color=grey></font></strong> for coding potential calculation can be downloaded at
+	<a href="https://github.com/lulab/COME">github</a>
+	</p>
+	</div>	
+ </div>
+
+
+
+
+      <div>
+        <h3>Server</h3>
+      </div>
+
+<div>
+	<form name="demoForm" id="demoForm" method="post" enctype="multipart/form-data" onsubmit="return validate_form(this)" action="come.php"> 
+	<div class="well">
+	<p class="text-muted"><font size="4">Select Genome:</font></p>
+	<p>
+	<select name="Species" size="1" id="species">
+          <option value="human" selected="selected">Human</option> 
+	  <option value="mouse">Mouse</option> 
+	  <option value="worm">Worm</option> 
+	  <option value="fly">Fly</option> 
+	  <option value="plant">Plant</option> 
+        </select>	
+	</p>
+	<br>
+	<p class="text-muted"><font size="4">Upload the coordinates file (format: <a href="http://genome.ucsc.edu/FAQ/FAQformat.html">gtf</a>, size limit:<b><1M</b>) for your <b>RNA transcripts</b>:</font> 
+
+	
+	<input type="file" name="file" id = "file-input" /> </p>
+	<br>
+	<p class="text-muted"><font size="4">Or Paste the coordinates in gtf format here:</font></p>
+	<p>
+<pre>
+	<textarea style="width:800px; height:200px;position: relative; left: -70px;" name="text" cols="40" rows="30" id="text" >
+chr1	Cufflinks	exon	12567300	12567451	.	+	.	gene_id "XLOC_000302"; transcript_id "TCONS_00001219"; exon_number "1"; gene_name "SNORA59A";
+chr1	Cufflinks	exon	28832492	28832596	.	+	.	gene_id "XLOC_000714"; transcript_id "TCONS_00002620"; exon_number "1"; gene_name "SNHG3";
+chr1	Cufflinks	exon	28834640	28834672	.	+	.	gene_id "XLOC_000714"; transcript_id "TCONS_00002620"; exon_number "2"; gene_name "SNHG3";
+chr1	Cufflinks	exon	28835342	28837404	.	+	.	gene_id "XLOC_000714"; transcript_id "TCONS_00002620"; exon_number "3"; gene_name "SNHG3";
+	</textarea>
+</pre>
+	</p>
+	<p>Genome Version: human (hg19), mouse (mm10), fly (dm3), worm (ce10) and plant (TAIR10)</p>
+	<a style="font-size:20px" href="./help.html">help</a>
+	</div>
+	<p><input class="btn btn-primary" type="submit" value="Submit" role="button"  /></p> 
+	</form>
+</div>
+<br>
+<br>
+
+      <!-- Site footer -->
+      <div class="footer">
+      <center>
+        <p><a href="http://bioinfo.life.tsinghua.edu.cn">&copy; 2015 lulab @ Tsinghua</a></p>
+      <!-- Start of StatCounter Code for Default Guide -->
+        <script type="text/javascript">
+        var sc_project=9970854;
+        var sc_invisible=0;
+        var sc_security="b558f75d";
+        var scJsHost = (("https:" == document.location.protocol) ?
+        "https://secure." : "http://www.");
+        document.write("<sc"+"ript type='text/javascript' src='" +
+        scJsHost+
+        "statcounter.com/counter/counter.js'></"+"script>");
+        </script>
+        <noscript><div class="statcounter"><a title="web stats"
+        href="http://statcounter.com/free-web-stats/"
+        target="_blank"><img class="statcounter"
+        src="http://c.statcounter.com/9970854/0/b558f75d/0/"
+        alt="web stats"></a></div></noscript>
+      <!-- End of StatCounter Code for Default Guide -->
+      </center>
+      </div>
+
+    </div> <!-- /container -->
+
+</div>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+  
+
+    <script type="text/javascript" src="./public/js/cp.js"></script>
+</body></html>

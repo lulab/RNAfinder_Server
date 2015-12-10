@@ -1,0 +1,9 @@
+path1=/Share/home/lulab1/users/hulong/projects/CPC/software/software/V2/dat
+cd $path1;
+mkdir human;
+####	human
+cp	/Share/home/lulab1/users/hulong/projects/CPC/software/transcripts/human/model/TR/TR.b.model.CIS.NoNA.1		$path1/human/transcripts.model;
+cp	/Share/home/lulab1/users/hulong/projects/CPC/software/prob/human/coding_potential/CP.h5				$path1/human/CP.h5;
+
+
+
