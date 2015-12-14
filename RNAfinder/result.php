@@ -205,7 +205,7 @@ function drawtable(table_file)
         for($i = 0; $i< count($line); $i++){
                 if (!preg_match("/[a-zA-Z0-9_]/",$line[$i])) continue;            
                 $each = explode("\t",$line[$i]);
-                for($j = 0; $j <count($each)-3-1; $j++) { // it will read an extra line, so -1; skip the first 3 col., so -3
+                for($j = 0; $j <count($each)-3-1-1; $j++) { // it will read an extra line, so -1; skip the first 3 col., so -3; it will ignore the last column showing the length, so -1 again
                 	if (!preg_match("/[a-zA-Z0-9_]/",$each[$j+3])) continue;  
                 	$data_array[$num][0]=$j;
                 	$data_array[$num][1]=$i;
@@ -276,6 +276,7 @@ var IDdata = <?php echo json_encode( $ID_array ) ?>;
                    <thead>
                         <tr>
                             <th>Transcript ID</th>
+                            <th>Length</th>
                             <th>Coding Potential</th>
                             <th>Predicted Class</th>
                         </tr>
@@ -287,6 +288,7 @@ var IDdata = <?php echo json_encode( $ID_array ) ?>;
 			$each = explode("\t",$line[$i]);
 			echo "<tr>";
 			echo "<td>".$each[0]."</td>";
+			echo "<td>".$each[12]."</td>";
 			echo "<td>".$each[1]."</td>";
 			echo "<td>".$each[2]."</td>";
  			echo "</tr>";

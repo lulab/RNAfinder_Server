@@ -35,7 +35,7 @@ fi
 
 for i in `seq 1 15`; do
 	echo -ne "testID$i\t0.3\tnoncoding\t"  >>      $output_dir/result;
-        for j in `seq 1 9`; do
+        for j in `seq 1 10`; do
                 echo -ne "$j\t"  >>      $output_dir/result;
         done
         echo ""   >>      $output_dir/result;
