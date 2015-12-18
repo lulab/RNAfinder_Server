@@ -94,15 +94,18 @@
 							"Coding Potential" => $each[1],
 							"Predicted Class" => $each[2],
 
-							 "GC_Content" => $each[3],
-							 'Protein_Conservation' => $each[4], 
-							 'DNA_Conservation' => $each[5],
-							 'RNA_Structure_Conservation' => $each[6],
-							 'H3K4me3' => $each[7],
-							 'H3K36me3' => $each[8],
-							 'NonpolyA_RNAseq' => $each[9],
-							 'PolyA_RNAseq' => $each[10],
-							 'Small_RNAseq' => $each[11]
+							 "subclass" => $each[3],
+							 "DNA_Conservation" => $each[4],
+							 "Protein_Conservation" => $each[5],
+							 "NonpolyA" => $each[6],
+							 "PolyA" => $each[7],
+							 "smallRNA" => $each[8],
+							 "GC_content" => $each[9],
+							 'H3K36me3' => $each[10],
+							 'RNA_structure' => $each[11],
+							 'H3K4me3' => $each[12],
+							 'Transcript_length' => $each[13],
+
 						 );	
 		}
 		$jsonresultArray=json_encode($resultArray);		
@@ -164,10 +167,13 @@
 		if(get_magic_quotes_gpc()){   //如果get_magic_quotes_gpc()是打开的
 		$gtf=stripslashes($gtf);  //将字符串进行处理
 		}
+		//echo $gtf;
 		$tempId = makeTemp();  //prepare the dir
 		$myfile = fopen("./".$tempId[0]."/input", "w") or die("Unable to open file!");
+		print_r($res2);
 		fwrite($myfile, $gtf);
 		fclose($myfile);
+		exec("dos2unix ./".$tempId[0]."/input");
 		if (codingPotential($tempId[0])) displayResult($tempId[0]); //run COME and output result files
 		else echo "No result";
 	//handle other input errors
